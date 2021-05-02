@@ -1,6 +1,9 @@
 import React from "react"
 import Product from "./components/product"
 import productsData from "./components/productdata"
+import "./style.css"
+
+
 
 function App(){
   // using the concept of higher order arrays to generate a new set of data
@@ -9,13 +12,19 @@ function App(){
 
   // the Productindexes inside of thie map bracktet below is the individual indexes data 
   const productComponents =productsData.map(Productindexes=>{
-    return (<Product key={Productindexes.id} name={Productindexes.name} price={Productindexes.price}/>)})
+    return (<Product key={Productindexes.id} name={Productindexes.name} Tag={Productindexes.Tag}
+    Brand={Productindexes.Brand} Price={Productindexes.Price}/>)})
    
   return(
-    <div>
+    <div >
+      <div className="head"><h1 > Golden Touch Essentials</h1></div>
+      
+      <div>
       {/* react allows us to put the array of components in the jsx, so I will be donig that now  */}
       {productComponents}
     </div>
+    </div>
+    
   )
 }
 
