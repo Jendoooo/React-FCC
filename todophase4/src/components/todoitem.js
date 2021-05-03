@@ -3,7 +3,9 @@ import React from 'react'
 const TODO = (props) => {
     return (
         <div className="todo-items">
-            <input type="checkbox" checked={props.item.completed}></input>
+            <input type="checkbox" 
+            checked={props.item.completed} // should only check if this returns true 
+            onChange={()=> props.handleChange(props.item.id)}/>
                <p>{props.item.text}</p>
                
         </div>

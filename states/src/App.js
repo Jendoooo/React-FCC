@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React from "react"
 
 // class App extends React.Component{
 //   constructor(){
@@ -33,29 +33,61 @@ import React, { Component } from "react"
 //   }
 // }
 
-// Another pracitce 
+// // Another pracitce 
 
 
-class App extends Component{
+// class App extends Component{
+//   constructor(){
+//     super()
+//     this.state = {isloggedin : true}
+//   }
+//   render(){
+//     let display
+//     if (this.state.isloggedin){
+//       display = "in"
+
+//     }else {
+//       display = "out"
+//     }
+//     return(
+//       <div>
+//         <h1> My boy , you are currently logged {display}</h1>
+//       </div>
+//     )
+//   }
+// }
+
+// on changing state
+
+
+class App extends React.Component{
   constructor(){
     super()
-    this.state = {isloggedin : true}
+    this.state = {count: 1}
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  // handleClick(){
+  //   this.setState({count : 55})
+  // }
+
+  handleClick(){
+    this.setState(prevState => {
+      return {
+        count: prevState.count + 1 
+      }
+    })
   }
   render(){
-    let display
-    if (this.state.isloggedin){
-      display = "in"
-
-    }else {
-      display = "out"
-    }
     return(
       <div>
-        <h1> My boy , you are currently logged {display}</h1>
+        <h1> {this.state.count}</h1>
+        <button onClick={this.handleClick} > Click me</button>
       </div>
     )
   }
 }
 
 
+  
 export default App 
