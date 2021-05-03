@@ -17,4 +17,14 @@ function App(){
     
 }
 
-export default App
+
+
+//class based components introduction 
+
+// class App extends React.Component{
+//   render (){
+//     return 
+//   }
+// }
+
+// export default App
